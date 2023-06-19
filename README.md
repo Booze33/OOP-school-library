@@ -67,7 +67,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/Shisui6/OOP-school-library.git
+https://github.com/Booze33/OOP-school-library.git
 ```
 
 ### Install
@@ -93,11 +93,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Shisui**
+👤 **Tebe Tisloh**
 
-- GitHub: [@Shisui6](https://github.com/Shisui6)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/okemdi-udeh)
-
+- GitHub: [@Booze33](https://github.com/Booze33)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
