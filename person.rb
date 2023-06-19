@@ -1,6 +1,6 @@
 class Person
   @id_counter = 0
-  attr_accessor(:name, :age)
+  attr_writer(:name, :age)
   attr_reader(:id)
 
   def initialize(name = 'Unknown', age = nil, parent_permission: true)
