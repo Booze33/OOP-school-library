@@ -1,10 +1,12 @@
 class Person
-  @@id_counter = 0
-  attr_accessor :id, :name, :age
-  def initialize(name = "Unknown", age = nil, parent_permission = true)
+  @id_counter = 0
+  attr_accessor(:name, :age)
+  attr_reader(:id)
+
+  def initialize(name = 'Unknown', age = nil, parent_permission: true)
     @id = generate_id
     @name = name
-    @age  = age
+    @age = age
     @parent_permission = parent_permission
   end
 
@@ -27,6 +29,6 @@ class Person
   end
 
   def generate_id
-    @@id_counter += 1
+    @id_counter += 1
   end
 end
