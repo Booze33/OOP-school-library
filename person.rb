@@ -1,4 +1,6 @@
-class Person
+require_relative './decorate'
+
+class Person < Nameable
   @id_counter = 0
   attr_accessor :name, :age
   attr_reader :id, :parent_permission
@@ -22,5 +24,9 @@ class Person
 
   def generate_id
     @id_counter += 1
+  end
+
+  def correct_name
+    @name
   end
 end
