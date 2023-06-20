@@ -1,6 +1,21 @@
+require_relative 'person'
+
 class Nameable
   def correct_name
     raise NotImplementedError 'Subclasses must implement correct_name method'
+  end
+end
+
+class Person < Nameable
+  attr_accessor :name, :age
+
+  def initialize(name = 'Unknown', age = nil)
+    @name = name
+    @age = age
+  end
+
+  def correct_name
+    name
   end
 end
 
