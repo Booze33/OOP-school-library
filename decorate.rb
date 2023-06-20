@@ -10,6 +10,7 @@ class Person < Nameable
   attr_accessor :name, :age
 
   def initialize(name = 'Unknown', age = nil)
+    super(correct_name, name, age)
     @name = name
     @age = age
   end
