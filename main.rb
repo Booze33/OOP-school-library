@@ -1,11 +1,53 @@
-require_relative './person'
-require_relative './decorate'
+require_relative './app'
 
-person = Person.new(1, 22, 'maximilianus')
-puts person.correct_name
+class Options
+  def initialize
+    @app = App.new(self)
 
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
+    puts
+    puts 'WELCOME TO THE SCHOOL LIBRARY APP!'
+    show_menu
+  end
 
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name
+  def show_menu
+    puts
+    puts 'Please choose an option by entering a number:'
+    puts '1 - List all books'
+    puts '2 - List all people'
+    puts '3 - Create a person'
+    puts '4 - Create a book'
+    puts '5 - Create a rental'
+    puts '6 - List all rentals for a given person ID'
+    puts '7 - Exit'
+    puts
+    user_choice = gets.chomp
+    select_option(user_choice)
+  end
+
+  def select_option(user_choice)
+    options = {
+      '1' => :list_of_books,
+      '2' => :list_of_people,
+      '3' => :create_person,
+      '4' => :create_book,
+      '5' => :create_rental,
+      '6' => :list_of_rentals,
+      '7' => :exit
+    }
+
+    method = options[user_choice]
+    if method.nil?
+      puts 'Invalid option, please try again!'
+      puts
+      show_menu
+    else
+      @app.send(method)
+    end
+  end
+end
+
+def main
+  Options.new
+end
+
+main
