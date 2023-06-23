@@ -87,23 +87,22 @@ class App
     
     puts 'Enter the number of the book:'
     book_num = gets.chomp.to_i
-  
+
     puts 'Select a person from the following list by number (not id)'
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
-  
+
     puts 'Enter the number of the person:'
     person_num = gets.chomp.to_i
-  
+
     print 'Date: '
     date = gets.chomp
-  
+
     @rentals.push(Rental.new(date, @books[book_num], @people[person_num]))
     puts 'Rental created successfully'
     @parent.show_menu
   end
-  
 
   def list_of_rentals
     print 'ID of person: '
