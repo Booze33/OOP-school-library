@@ -56,7 +56,7 @@ class App
     parent_permission = gets.chomp.downcase == 'y'
     @people.push(Student.new(age, name, parent_permission: parent_permission))
     puts
-    puts 'Person created successfully'
+    puts 'Student is successfully created'
   end
 
   def create_teacher
@@ -68,7 +68,7 @@ class App
     specialization = gets.chomp
     @people.push(Teacher.new(age, specialization, name))
     puts
-    puts 'Person created successfully'
+    puts 'Teacher is successfully created'
   end
 
   def create_book
@@ -84,20 +84,26 @@ class App
   def create_rental
     puts 'Select a book from the following list by number'
     @books.each_with_index { |book, index| puts "#{index}) Title: '#{book.title}', Author: #{book.author}" }
-    puts
+    
+    puts 'Enter the number of the book:'
+    book_num = gets.chomp.to_i
+  
     puts 'Select a person from the following list by number (not id)'
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
-    book_num = gets.chomp.to_i
+  
+    puts 'Enter the number of the person:'
     person_num = gets.chomp.to_i
-
+  
     print 'Date: '
     date = gets.chomp
+  
     @rentals.push(Rental.new(date, @books[book_num], @people[person_num]))
     puts 'Rental created successfully'
     @parent.show_menu
   end
+  
 
   def list_of_rentals
     print 'ID of person: '
