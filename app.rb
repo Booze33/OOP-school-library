@@ -60,13 +60,13 @@ class App
   end
 
   def create_teacher
-    print 'Age: '
-    age = gets.chomp
     print 'Name: '
     name = gets.chomp
+    print 'Age: '
+    age = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    @people.push(Teacher.new(age, specialization, name))
+    @people.push(Teacher.new(specialization, age, name))
     puts
     puts 'Teacher is successfully created'
   end
