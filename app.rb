@@ -27,7 +27,7 @@ class App
     else
       puts 'List of People:'
       @people.each do |person|
-        puts "NAME: #{person.name}, CLASS: #{person.class}, ID: #{person.id}, AGE: #{person.age}"
+        puts "[#{person.class}] NAME: #{person.name}, ID: #{person.id}, AGE: #{person.age}"
       end
     end
     @parent.show_menu
